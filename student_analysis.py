@@ -30,5 +30,6 @@ st.markdown("---")
 if st.button("Predict Performance"):
     features = np.array([[hours_studied, previous_scores, extracurricular, sleep_hours, sample_papers]])
     prediction = model.predict(features)
-    prediction=int(prediction)
+    prediction = int(prediction[0])
+
     st.success(f"Predicted Performance: {prediction}")
